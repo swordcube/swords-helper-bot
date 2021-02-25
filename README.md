@@ -1,5 +1,5 @@
 # Sword's Helper
-Source code for Sword's Helper on discord
+Source code for Sword's Helper on Discord
 
 <p><a title="Invite" href="https://discord.com/oauth2/authorize?client_id=766645902491648010&scope=bot&permissions=805314622" target="_blank" rel="noopener">Invite</a></p>
 <p><a title="Download" href="https://github.com/swordcube/swords-helper-bot/releases" target="_blank" rel="noopener">Download the source code</a></p>
@@ -25,6 +25,16 @@ Source code for Sword's Helper on discord
 <li>Go to the discord developer portal and select a bot</li>
 <li>Go to the bots section and click "Copy Token"</li>
 <li>Go back to Visual Studio Code and go to conf/config.json</li>
+<li>Replace the token (in quotes) with your bots token</li>
+</ol>
+
+<h2><strong>Command Prompt/Linux Terminal Instructions<br /></strong></h2>
+<li>Open the bot's folder</li>
+<li>Right click anywhere and click "Open in Terminal" or cd to the directory in Command Prompt.</li>
+<li>Type in "npm install discord.js" and press enter. After that's done, Type in "npm install pm2". it will install all the important parts for the bot to work.</li>
+<li>Go to the discord developer portal and select a bot</li>
+<li>Go to the bots section and click "Copy Token"</li>
+<li>Go to config.json</li>
 <li>Replace the token (in quotes) with your bots token</li>
 </ol>
 
