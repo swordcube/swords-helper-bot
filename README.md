@@ -28,6 +28,7 @@ Source code for Sword's Helper on Discord
 <li>Replace the token (in quotes) with your bots token</li>
 </ol>
 
+<ol>
 <h2><strong>Command Prompt/Linux Terminal Instructions<br /></strong></h2>
 <li>Open the bot's folder</li>
 <li>Right click anywhere and click "Open in Terminal" or cd to the directory in Command Prompt.</li>
