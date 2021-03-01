@@ -1,5 +1,5 @@
 const Discord = require('discord.js');
-const { version, botLogo, embedcolor } = require('../config.json')
+const { prefix, version, botLogo, embedcolor } = require('../config.json')
 
 module.exports = {
 	name: 'clap',

@@ -1,5 +1,5 @@
 const Discord = require('discord.js');
-const { version, botLogo, embedcolor } = require('../config.json')
+const { prefix, version, botLogo, embedcolor } = require('../config.json')
 
 module.exports = {
 	name: 'prefix',
@@ -8,7 +8,7 @@ module.exports = {
 
 		//start of code
 		try {
-			message.channel.send(":x: This command might work in the future. But for now you can't this bot's prefix. Sorry :/")
+			message.channel.send(":x: This command might work in the future. But for now you can't change this bot's prefix. Sorry :/")
 		}
 		catch {
 
