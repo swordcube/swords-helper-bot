@@ -35,8 +35,8 @@ module.exports = {
 
 			message.channel.send(helpembed)
 		}
-		catch {
-
+		catch(err) {
+			message.channel.send("something went wrong: " + err)
 		};
 		//end of code
 
