@@ -13,6 +13,8 @@ module.exports = {
 		if (!msg) return message.channel.send(":x: You didn't tell me what to say lmao")
 
 		message.channel.send(msg);
+
+		message.delete()
 		//end of code
 		}
 		catch {
