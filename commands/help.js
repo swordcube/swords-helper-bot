@@ -26,6 +26,8 @@ ${prefix}ban - Bans the person you @mention from the server.
 ${prefix}unban - Unbans the person you provide a user ID for from the server.
 ${prefix}purge - Purges/clears an amount of messages that you specify.
 ${prefix}reboot - Reboots/restarts the bot. (Only the bot owner can use this)
+${prefix}userinfo - Brings up the info of a mentioned user.
+${prefix}serverinfo - Brings up the info of the server you ran the command in.
 
 **The bot is open source! Click the link below to make your own bot like mine!**
 Source code on GitHub: https://github.com/swordcube/swords-helper-bot
