@@ -16,6 +16,7 @@ module.exports = {
 			.setDescription(`**These are the list of commands for Sword's Helper:**
 
 ${prefix}help - Brings up this message.
+${prefix}invite - Brings up the bot's invite.
 ${prefix}ping - Tells you the ping of the bot.
 ${prefix}clap - Repeats what you say, but with claps in-between.
 ${prefix}echo - Repeats what you say.
