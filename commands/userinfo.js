@@ -41,8 +41,8 @@ module.exports = {
 			},
 
 			{
-				name: 'Account Join Date',
-				value: new Date(user.joinedTimestamp).toLocaleDateString(),
+				name: 'Account Creation Date',
+				value: new Date(user.createdTimestamp).toLocaleDateString(),
 			},
 
 			{
@@ -52,7 +52,7 @@ module.exports = {
 
 			)
 
-			.setFooter(`User info for ${user.username} | v${version} - Created by hexianimates / swordcube`, user.displayAvatarURL())
+			.setFooter(`User Info for ${user.username} | v${version} - Created by hexianimates / swordcube`, user.displayAvatarURL())
 			.setThumbnail(user.displayAvatarURL())
 			.setColor(embedcolor)
 
