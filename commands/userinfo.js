@@ -17,7 +17,7 @@ module.exports = {
 
 		const userembed = new Discord.MessageEmbed()
 
-			.setAuthor(`User info for ${user.username}`, user.displayAvatarURL())
+			.setFooter(`User info for ${user.username}`, user.displayAvatarURL())
 			.setColor(embedcolor)
 
 			channel.send(userembed)
