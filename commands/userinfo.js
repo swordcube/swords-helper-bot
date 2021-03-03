@@ -9,21 +9,26 @@ module.exports = {
 		//start of code
 		try {
 		const { guild, channel } = message
-
-		const user = message.mentions.user.first() || message.member.user
+				
+		const user = message.mentions.users.first() || message.member.user
 		const member = guild.members.cache.get(user.id)
 
-		
+
+		const msg = args.join(' ')
 
 		const userembed = new Discord.MessageEmbed()
 
-			.setFooter(`User info for ${user.username}`, user.displayAvatarURL())
+			.setTitle("User Info")
+			.setDescription(`**yes:**
+
+test 123`)
+			.setFooter(`User info for ${user.username} | v${version} - Created by hexianimates / swordcube`, user.displayAvatarURL())
 			.setColor(embedcolor)
 
-			channel.send(userembed)
+			message.channel.send(userembed)
 		}
-		catch(err) {
-			message.channel.send(err)
+		catch {
+		
 		};
 		//end of code
 
