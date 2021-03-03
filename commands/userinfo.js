@@ -22,8 +22,8 @@ module.exports = {
 
 			message.channel.send(userembed)
 		}
-		catch {
-		
+		catch(err) {
+			message.channel.send(err)
 		};
 		//end of code
 
