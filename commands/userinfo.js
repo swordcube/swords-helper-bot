@@ -18,7 +18,7 @@ module.exports = {
 
 		const userembed = new Discord.MessageEmbed()
 
-			.setAuthor(`User Info for ${user.username}`)
+			.setAuthor(`User Info for ${user.username}`, user.displayAvatarURL())
 			.addFields(
 			{
 				name: 'User Tag',
@@ -52,7 +52,7 @@ module.exports = {
 
 			)
 
-			.setFooter(`v${version} - Created by hexianimates / swordcube`, user.displayAvatarURL())
+			.setFooter(`v${version} - Created by hexianimates / swordcube`, botLogo)
 			.setThumbnail(user.displayAvatarURL())
 			.setColor(embedcolor)
 
