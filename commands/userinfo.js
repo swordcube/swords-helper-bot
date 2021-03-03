@@ -20,7 +20,7 @@ module.exports = {
 			.setAuthor(`User info for ${user.username}`, user.displayAvatarURL())
 			.setColor(embedcolor)
 
-			message.channel.send(userembed)
+			channel.send(userembed)
 		}
 		catch(err) {
 			message.channel.send(err)
