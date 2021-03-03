@@ -19,10 +19,41 @@ module.exports = {
 		const userembed = new Discord.MessageEmbed()
 
 			.setTitle("User Info")
-			.setDescription(`**yes:**
+			.addFields(
+			{
+				name: 'User Tag',
+				value: user.tag,
+			},
 
-test 123`)
+			{
+				name: 'Is Bot',
+				value: user.bot,		
+			},
+
+			{
+				name: 'Nickname',
+				value: member.nickname || 'None',
+			},
+
+			{
+				name: 'Server Join Date',
+				value: new Date(member.joinedTimestamp).toLocaleDateString(),
+			},
+
+			{
+				name: 'Account Join Date',
+				value: new Date(user.joinedTimestamp).toLocaleDateString(),
+			},
+
+			{
+				name: 'Role Count',
+				value: member.roles.cache.size - 1,
+			},
+
+			)
+
 			.setFooter(`User info for ${user.username} | v${version} - Created by hexianimates / swordcube`, user.displayAvatarURL())
+			.setThumbnail(user.displayAvatarURL())
 			.setColor(embedcolor)
 
 			message.channel.send(userembed)
