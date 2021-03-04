@@ -4,7 +4,7 @@ const { prefix, version, botLogo, embedcolor } = require('../config.json')
 module.exports = {
 	name: 'invite',
 	description: "Brings up the bot's invite",
-	async execute(client, message, args){
+	async execute(message, args){
 
 		//start of code
 		try {
