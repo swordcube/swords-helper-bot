@@ -13,7 +13,7 @@ module.exports = {
 		client.generateInvite({
   		permissions: ['SEND_MESSAGES', 'MANAGE_GUILD', 'MENTION_EVERYONE'],
 		})
-  .then(const invite = `${link}`))
+		.then(link => const invite = `${link}`))
 		
 		const helpembed = new Discord.MessageEmbed()
 
