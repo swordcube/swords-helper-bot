@@ -4,12 +4,17 @@ const { prefix, version, botLogo, embedcolor } = require('../config.json')
 module.exports = {
 	name: 'invite',
 	description: "Brings up the bot's invite",
-	async execute(message, args){
+	async execute(client, message, args){
 
 		//start of code
 		try {
 		const msg = args.join(' ')
 
+		client.generateInvite({
+  		permissions: ['SEND_MESSAGES', 'MANAGE_GUILD', 'MENTION_EVERYONE'],
+		})
+  .then(const invite = `${link}`))
+		
 		const helpembed = new Discord.MessageEmbed()
 
 			.setTitle("Invite")
