@@ -36,7 +36,7 @@ client.once('ready', () => {
 
 // command recieving
 
-client.on('message', message => {
+client.on('message', async message => {
 
 	// custom prefix shit
 	let prefix;
