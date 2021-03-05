@@ -1,4 +1,5 @@
 const Discord = require('discord.js');
+const db = require('quick.db');
 
 // Discord.Constants.DefaultOptions.ws.properties.$browser = "Discord Android";
 
@@ -15,10 +16,15 @@ for (const file of commandFiles){
 	client.commands.set(command.name, command);	
 }
 
-const { token, prefix, version, botLogo, embedcolor } = require('./config.json')
+const { prefix, version, botLogo, embedcolor } = require('./config.json')
+
+// bot status
 
 client.once('ready', () => {
-    console.log('Bot is online');
+    console.log("Sword's Helper is online")
+    console.log("To turn off the bot, Go to the bot's Heroku Dashboard and turn off the `npm index.js` switch.")
+    console.log("Or if hosted from your (swordcube)'s pc, Press CTRL+C to turn off the bot.");
+
     client.user.setPresence({ 
 	activity: { 
 		name: `for ${prefix}help | v${version}`,
@@ -26,10 +32,9 @@ client.once('ready', () => {
 	}, 
 		status: 'dnd'
 	})
-
-  	.then(console.log)
-    	.catch(console.error);
 });
+
+// command recieving
 
 client.on('message', message => {
 	if(!message.content.startsWith(prefix) || message.author.bot) return;
@@ -48,5 +53,59 @@ client.on('message', message => {
 	}
 
 });
+
+// welcome message
+
+client.on('guildMemberAdd', (member) => {
+	try {
+		let chx = db.get(`welchannel_${member.guild.id}`)
+
+		if (chx === null) {
+			return;
+		}
+		
+		let wembed = new Discord.MessageEmbed()
+		.setAuthor(member.user.username, member.user.AvatarURL())
+		.setColor(embedcolor)
+		.setThumbnail(member.user.avatarURL())
+		.setDescription(`Welcome to the server, ${member}. We are happy to see you here!`)
+
+		client.channels.cache.get(chx).send(wembed)
+
+	}
+	
+	catch {
+	
+	}
+
+});
+
+// leave message
+
+client.on('guildMemberRemove', (member) => {
+	try {
+		let chx = db.get(`welchannel_${member.guild.id}`)
+
+		if (chx === null) {
+			return;
+		}
+		
+		let lembed = new Discord.MessageEmbed()
+		.setAuthor(member.user.username, member.user.AvatarURL())
+		.setColor(embedcolor)
+		.setThumbnail(member.user.avatarURL())
+		.setDescription(`Goodbye ${member}, We hope you enjoyed your stay.`)
+
+		client.channels.cache.get(chx).send(lembed)
+
+	}
+	
+	catch {
+	
+	}
+
+});
+
+// login to discord and w o r k
 
 client.login(process.env.TOKEN);
