@@ -12,7 +12,7 @@ module.exports = {
 			if(!args[0]) return message.channel.send(":x: You didn't tell me what to change the prefix to.");
 
 
-			db.set(`prefix_${message.guild.id}`, args[0])			
+			await db.set(`prefix_${message.guild.id}`, args[0])			
 
 			const embed = new Discord.MessageEmbed()
 
