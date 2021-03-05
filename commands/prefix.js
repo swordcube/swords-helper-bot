@@ -14,18 +14,7 @@ module.exports = {
 
 			await db.set(`prefix_${message.guild.id}`, args[0])			
 
-			const embed = new Discord.MessageEmbed()
-
-			.setTitle("Prefix")
-			.setDescription(`**The prefix has been changed!**
-			`)
-			.setFooter(`v${version} - Created by hexianimates / swordcube`, botLogo)
-			.setThumbnail(botLogo)
-			.setColor(embedcolor)
-
-			message.channel.send(embed)
-
-			// message.channel.send(":x: This command might work in the future lol")
+			message.channel.send("hi")
 		}
 		catch (err) {
 			message.channel.send(err)
