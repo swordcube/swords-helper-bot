@@ -58,7 +58,7 @@ client.on('message', message => {
 
 client.on('guildMemberAdd', (member) => {
 
-		let chx = db.get(`welchannel_${member.guild.id}`)
+		let chx = db.get(`welchannel_${member.guild.id}`);
 
 		if (chx === null) {
 			return;
@@ -76,23 +76,6 @@ client.on('guildMemberAdd', (member) => {
 
 // leave message
 
-client.on('guildMemberRemove', (member) => {
-
-		let chx = db.get(`welchannel_${member.guild.id}`);
-
-		if (chx === null) {
-			return;
-		}
-		
-		let lembed = new Discord.MessageEmbed()
-		.setAuthor(member.user.username, member.user.AvatarURL())
-		.setColor(embedcolor)
-		.setThumbnail(member.user.avatarURL())
-		.setDescription(`Goodbye ${member}, We hope you enjoyed your stay.`);
-
-		client.channels.cache.get(chx).send(lembed)
-	
-});
 
 // login to discord and w o r k
 
