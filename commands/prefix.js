@@ -17,8 +17,7 @@ module.exports = {
 			const embed = new Discord.MessageEmbed()
 
 			.setTitle("Prefix")
-			.setDescription(`**The prefix for this server is now:**
-${args[0]}
+			.setDescription(`**The prefix has been changed!**
 			`)
 			.setFooter(`v${version} - Created by hexianimates / swordcube`, botLogo)
 			.setThumbnail(botLogo)
@@ -28,8 +27,8 @@ ${args[0]}
 
 			// message.channel.send(":x: This command might work in the future lol")
 		}
-		catch {
-
+		catch (err) {
+			message.channel.send(err)
 		};
 		//end of code
 
