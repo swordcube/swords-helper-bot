@@ -8,7 +8,7 @@ module.exports = {
 
 		//start of code
 		try {
-			if(!message.member.hasPermission('MANAGE_GUILD')) return message.channel.send(":x: You don't have the permissions to change the server prefix.");
+			if(!message.member.hasPermission('MANAGE_SERVER')) return message.channel.send(":x: You don't have the permissions to change the server prefix.");
 			if(!args[0]) return message.channel.send(":x: You didn't tell me what to change the prefix to.");
 
 
