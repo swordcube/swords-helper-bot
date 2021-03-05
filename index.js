@@ -57,7 +57,7 @@ client.on('message', message => {
 // welcome message
 
 client.on('guildMemberAdd', (member) => {
-	try {
+
 		let chx = db.get(`welchannel_${member.guild.id}`)
 
 		if (chx === null) {
@@ -68,23 +68,17 @@ client.on('guildMemberAdd', (member) => {
 		.setAuthor(member.user.username, member.user.AvatarURL())
 		.setColor(embedcolor)
 		.setThumbnail(member.user.avatarURL())
-		.setDescription(`Welcome to the server, ${member}. We are happy to see you here!`)
+		.setDescription(`Welcome to the server, ${member}. We are happy to see you here!`);
 
 		client.channels.cache.get(chx).send(wembed)
-
-	}
-	
-	catch {
-	
-	}
 
 });
 
 // leave message
 
 client.on('guildMemberRemove', (member) => {
-	try {
-		let chx = db.get(`welchannel_${member.guild.id}`)
+
+		let chx = db.get(`welchannel_${member.guild.id}`);
 
 		if (chx === null) {
 			return;
@@ -94,16 +88,10 @@ client.on('guildMemberRemove', (member) => {
 		.setAuthor(member.user.username, member.user.AvatarURL())
 		.setColor(embedcolor)
 		.setThumbnail(member.user.avatarURL())
-		.setDescription(`Goodbye ${member}, We hope you enjoyed your stay.`)
+		.setDescription(`Goodbye ${member}, We hope you enjoyed your stay.`);
 
 		client.channels.cache.get(chx).send(lembed)
-
-	}
 	
-	catch {
-	
-	}
-
 });
 
 // login to discord and w o r k
