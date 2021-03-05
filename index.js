@@ -37,6 +37,19 @@ client.once('ready', () => {
 // command recieving
 
 client.on('message', message => {
+
+	// custom prefix shit
+	let prefix;
+
+	let prefixes = await db.fetch(`prefix_${message.guild.id}`);
+
+	if(prefixes == null) {
+		prefix = "sw?"
+	} else {
+		prefix = prefixes
+	}
+
+
 	if(!message.content.startsWith(prefix) || message.author.bot) return;
 
 	const args = message.content.slice(prefix.length).split(/ +/);
@@ -53,28 +66,6 @@ client.on('message', message => {
 	}
 
 });
-
-// welcome message
-
-client.on('guildMemberAdd', (member) => {
-
-		let chx = db.get(`welchannel_${member.guild.id}`);
-
-		if (chx === null) {
-			return;
-		}
-		
-		let wembed = new Discord.MessageEmbed()
-		.setAuthor(member.user.username, member.user.avatarURL())
-		.setColor(embedcolor)
-		.setThumbnail(member.user.avatarURL())
-		.setDescription(`Welcome to the server, ${member}. We are happy to see you here!`);
-
-		client.channels.cache.get(chx).send(wembed)
-
-});
-
-// leave message
 
 
 // login to discord and w o r k
