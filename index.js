@@ -22,7 +22,7 @@ const { prefix, version, botLogo, embedcolor } = require('./config.json')
 
 client.once('ready', () => {
     console.log("Sword's Helper is online")
-    console.log("To turn off the bot, Go to the bot's Heroku Dashboard and turn off the `npm index.js` switch.")
+    console.log("To turn off the bot, Go to the bot's Heroku Dashboard and turn off the `node index.js` switch.")
     console.log("Or if hosted from your (swordcube)'s pc, Press CTRL+C to turn off the bot.");
 
     client.user.setPresence({ 
@@ -65,7 +65,7 @@ client.on('guildMemberAdd', (member) => {
 		}
 		
 		let wembed = new Discord.MessageEmbed()
-		.setAuthor(member.user.username, member.user.displayAvatarURL())
+		.setAuthor(member.user.username, member.user.avatarURL())
 		.setColor(embedcolor)
 		.setThumbnail(member.user.avatarURL())
 		.setDescription(`Welcome to the server, ${member}. We are happy to see you here!`);
