@@ -2,7 +2,7 @@ const Discord = require('discord.js')
 //const db = require('quick.db');
 const db = require('mongoose')
 
-const dbOptions {
+const dbOptions = {
 	useNewUrlParser: true,
 	useUnifiedTopology: true,
 	useFindAndModify: true
