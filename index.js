@@ -24,7 +24,6 @@ for (const file of commandFiles){
 }
 
 const { prefix, version, botLogo, embedcolor } = require('./config.json')
-const mongo = require('./mongo')
 
 // bot status
 
@@ -40,17 +39,7 @@ client.once('ready', async () => {
 	}, 
 		status: 'dnd'
 	})
-	
-	// mongo.db stuff
 
-	await mongo().then(mongoose => {
-		try {
-			console.log('Connected to Mongo! epic gamer time')
-		} finally {
-			mongoose.connection.close()
-		}
-	})
-		//.then(console.log('Mongo.db has connected.'))
 });
 
 // command recieving
