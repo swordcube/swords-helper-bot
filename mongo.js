@@ -2,8 +2,7 @@ const mongoose = require('mongoose')
 
 const dbOptions = {
 	useNewUrlParser: true,
-	useUnifiedTopology: true,
-	useFindAndModify: true
+	useUnifiedTopology: true
 }
 
 module.exports = async () => {
