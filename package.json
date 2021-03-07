@@ -10,6 +10,7 @@
   "license": "ISC",
   "dependencies": {
     "discord.js": "^12.5.1",
+    "mongoose": "^5.11.19",
     "pm2": "^4.5.4",
     "quick.db": "^7.1.3"
   }
