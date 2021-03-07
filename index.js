@@ -1,12 +1,12 @@
 const Discord = require('discord.js')
 //const db = require('quick.db');
-const db = require('mongoose');
+const db = require('mongoose')
 
 const dbOptions {
 	useNewUrlParser: true,
 	useUnifiedTopology: true,
 	useFindAndModify: true
-};
+}
 
 // Discord.Constants.DefaultOptions.ws.properties.$browser = "Discord Android";
 
