@@ -1,12 +1,12 @@
 const Discord = require('discord.js')
 //const db = require('quick.db');
-const db = require('mongoose')
+// const db = require('mongoose')
 
-const dbOptions = {
-	useNewUrlParser: true,
-	useUnifiedTopology: true,
-	useFindAndModify: true
-}
+// const dbOptions = {
+//	useNewUrlParser: true,
+//	useUnifiedTopology: true,
+//	useFindAndModify: true
+//}
 
 // Discord.Constants.DefaultOptions.ws.properties.$browser = "Discord Android";
 
@@ -24,6 +24,7 @@ for (const file of commandFiles){
 }
 
 const { prefix, version, botLogo, embedcolor } = require('./config.json')
+const mongo = require('./mongo')
 
 // bot status
 
@@ -42,8 +43,14 @@ client.once('ready', async () => {
 	
 	// mongo.db stuff
 
-	await db.connect('mongodb+srv://' + process.env.MONGO_USER + ':' + process.env.MONGO_PASS + '@cluster0.u1nan.mongodb.net/lodeko?retryWrites=true&w=majority', dbOptions)
-		.then(console.log('Mongo.db has connected.'))
+	await mongo().then(mongoose => {
+		try {
+			console.log('Connected to Mongo! epic gamer time')
+		} finally {
+			mongoose.connection.close()
+		}
+	})
+		//.then(console.log('Mongo.db has connected.'))
 });
 
 // command recieving
