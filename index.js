@@ -51,16 +51,6 @@ client.once('ready', async () => {
 client.on('message', async message => {
 
 	// custom prefix shit
-	let prefix;
-
-	let prefixes = await db.fetch(`prefix_${message.guild.id}`);
-
-	if(prefixes == null) {
-		prefix = "sw?"
-	} else {
-		prefix = prefixes
-	}
-
 
 	if(!message.content.startsWith(prefix) || message.author.bot) return;
 
