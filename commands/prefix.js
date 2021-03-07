@@ -15,10 +15,10 @@ module.exports = {
 
 			await db.set(`prefix_${message.guild.id}`, args[0])			
 
-			message.channel.send("hi")
+			message.channel.send(`:white_check_mark: Successfully changed the prefix to ${args[0]}`)
 		}
-		catch (err) {
-			message.channel.send(err)
+		catch {
+			
 		};
 		//end of code
 
