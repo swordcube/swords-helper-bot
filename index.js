@@ -42,7 +42,7 @@ client.once('ready', async () => {
 	
 	// mongo.db stuff
 
-	await db.connect('mongodb+srv://' + process.env.MONGO_USER + ':' + process.env.MONGO_PASS '@cluster0.u1nan.mongodb.net/lodeko?retryWrites=true&w=majority', dbOptions)
+	await db.connect('mongodb+srv://' + process.env.MONGO_USER + ':' + process.env.MONGO_PASS + '@cluster0.u1nan.mongodb.net/lodeko?retryWrites=true&w=majority', dbOptions)
 		.then(console.log('Mongo.db has connected.'))
 });
 
