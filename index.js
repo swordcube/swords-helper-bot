@@ -81,6 +81,8 @@ client.on('message', async message => {
 	
 	catch (err) {
 		message.channel.send(":x: That command doesn't exist! Do `sw?help` for a list of commands you can use.")
+
+		const channel = client.channels.cache.find(channel => channel.id === "821599207961788416")
     		let invalidembed = new Discord.MessageEmbed()
 
     		.setTitle("Bot error")
