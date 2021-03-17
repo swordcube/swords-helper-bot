@@ -33,7 +33,14 @@ client.once('ready', async (message) => {
     console.log("Or if hosted from your (swordcube)'s pc, Press CTRL+C to turn off the bot.");
 
     const channel = client.channels.cache.find(channel => channel.id === "821599207961788416")
-    channel.send("Bot is currently online. Will this message spam? no clue.")
+    const startupembed = new Discord.MessageEmbed()
+
+    .setTitle("Bot started")
+    .setDescription(`Sword's Helper has been started successfully.`)
+    .setFooter(`v${version} - Created by hexianimates / swordcube`, botLogo)
+    .setColor(embedcolor)
+
+    channel.send(startupembed)
 
     client.user.setPresence({ 
 	activity: { 
