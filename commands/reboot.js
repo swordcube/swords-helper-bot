@@ -9,7 +9,7 @@ module.exports = {
 
 		//start of code
 		const msg = args.join(' ')
-		const channel = client.channels.cache.find(channel => channel.id === "821599207961788416")
+		const rebootchannel = client.channels.cache.find(channel => channel.id === "821599207961788416")
 		const rebootembed = new Discord.MessageEmbed()
 
 		.setTitle("Rebooting")
@@ -22,7 +22,7 @@ module.exports = {
 		try {
 			if (message.author.id == "609047869613277190")
 				await message.channel.send("<a:loading:821602521000181760> Restarting...")
-    				await channel.send(rebootembed)
+    				await rebootchannel.send(rebootembed)
 			process.exit()
 		} catch (e) {
 			console.log(e.message)
