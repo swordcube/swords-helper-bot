@@ -41,5 +41,4 @@ Source code on GitHub: https://github.com/swordcube/swords-helper-bot
 
 		//end of code
 
-	}
 };
