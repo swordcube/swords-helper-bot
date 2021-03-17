@@ -27,12 +27,6 @@ const { prefix, version, botLogo, embedcolor } = require('./config.json')
 
 const botstatuschannel = client.channels.cache.find(channel => channel.id === "821599207961788416")
 
-function catchErr (err, message) {
-	const rebootchannel = client.channels.cache.find(channel => channel.id === "821599207961788416")
-	client.users.get('609047869613277190').send ("There was an error at " + message.channel + " in guild " + message.guild + ", ERROR: ```" + err + "```")
-	botstatuschannel.send("There was an error at " + message.channel + " in guild " + message.guild + ", ERROR: ```" + err + "```");
-}
-
 // bot status
 
 client.once('ready', async (message) => {
@@ -78,7 +72,6 @@ client.on('message', async message => {
 	
 	catch (err) {
 		message.channel.send(":x: That command doesn't exist! Do `sw?help` for a list of commands you can use.")
-		catchErr(err, message);
 	}
 
 });
