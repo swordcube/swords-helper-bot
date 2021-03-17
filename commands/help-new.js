@@ -5,7 +5,7 @@ const { prefix, version, botLogo, embedcolor } = require('../config.json');
 module.exports = {
 	name: 'help-new',
 	description: "Brings up this message.",
-	execute(client, message, args){
+	execute(message, args){
 
 		//start of code
 		try {
