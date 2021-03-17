@@ -33,7 +33,7 @@ client.once('ready', async (message) => {
     console.log("To turn off the bot, Go to the bot's Heroku Dashboard and turn off the `node index.js` switch.")
     console.log("Or if hosted from your (swordcube)'s pc, Press CTRL+C to turn off the bot.");
 
-    const botstatuschannel = client.channels.cache.find(botstatuschannel => channel.id === "821599207961788416")
+    const channel = client.channels.cache.find(channel => channel.id === "821599207961788416")
 
     const startupembed = new Discord.MessageEmbed()
 
@@ -42,7 +42,7 @@ client.once('ready', async (message) => {
     .setFooter(`v${version} - Created by hexianimates / swordcube`, botLogo)
     .setColor(embedcolor)
 
-    botstatuschannel.send(startupembed)
+    channel.send(startupembed)
 
     client.user.setPresence({ 
 	activity: { 
