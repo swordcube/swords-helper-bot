@@ -80,7 +80,14 @@ client.on('message', async message => {
 	}
 	
 	catch (err) {
-		message.channel.send(":x: That command doesn't exist! Do `sw?help` for a list of commands you can use.\nBut something else could have gone wrong. If there is an error, something else went wrong: \n" + "```" + err + "```")
+		message.channel.send(":x: That command doesn't exist! Do `sw?help` for a list of commands you can use.")
+    		let invalidembed = new Discord.MessageEmbed()
+
+    		.setTitle("Bot error")
+    		.setDescription(`Something went wrong while executing the command ` + "``" + command + "``. \n\n**Error:**\n```" + err + "```")
+    		.setFooter(`v${version} - Created by hexianimates / swordcube`, botLogo)
+    		.setColor(embedcolor)
+    		channel.send(invalidembed)
 	}
 
 });
