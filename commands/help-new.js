@@ -10,7 +10,7 @@ module.exports = {
 			const helpembed = new Discord.MessageEmbed()
 			
 			.setTitle(Help)
-			.setDescription("Here is a list of all available commands for Sword's Helper.)
+			.setDescription("Here is a list of all available commands for Sword's Helper.")
 			.setColor(embedcolor)
 		
 		client.commands.forEach((command) => {
