@@ -1,4 +1,5 @@
-const Discord = require('discord.js');
+const Discord = require('discord.js')
+const client = new Discord.Client()
 const { prefix, version, botLogo, embedcolor } = require('../config.json')
 
 module.exports = {
