@@ -8,12 +8,14 @@ module.exports = {
 
 		//start of code
 		try {
-		const msg = args.join(' ')
+		const msg = args.join('+')
 
 		const ripembed = new Discord.MessageEmbed()
 
 			.setImage(`http://www.tombstonebuilder.com/generate.php?top1=R.I.P&top2=&top3=${msg}&top4=1000+-+2021&sp=`)
 			.setColor(embedcolor)
+
+			if (!msg) return message.channel.send(":x: You didn't type in anything. Try again.");
 
 			message.channel.send(ripembed)
 		}
