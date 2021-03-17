@@ -39,8 +39,8 @@ Source code on GitHub: https://github.com/swordcube/swords-helper-bot
 
 			message.channel.send(helpembed)
 		}
-		catch {
-		
+		catch (err) {
+			message.channel.send(err)
 		};
 		//end of code
 
