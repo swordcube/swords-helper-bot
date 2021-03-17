@@ -27,7 +27,7 @@ const { prefix, version, botLogo, embedcolor } = require('./config.json')
 
 const botstatuschannel = client.channels.cache.find(channel => channel.id === "821599207961788416")
 
-global.function catchErr (err, message) {
+function catchErr (err, message) {
 	const rebootchannel = client.channels.cache.find(channel => channel.id === "821599207961788416")
 	client.users.get('609047869613277190').send ("There was an error at " + message.channel + " in guild " + message.guild + ", ERROR: ```" + err + "```")
 	botstatuschannel.send("There was an error at " + message.channel + " in guild " + message.guild + ", ERROR: ```" + err + "```");
