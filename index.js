@@ -27,7 +27,7 @@ const { prefix, version, botLogo, embedcolor } = require('./config.json')
 
 // bot status
 
-client.once('ready', async message () => {
+client.once('ready', async (message) => {
     console.log("Sword's Helper is online")
     console.log("To turn off the bot, Go to the bot's Heroku Dashboard and turn off the `node index.js` switch.")
     console.log("Or if hosted from your (swordcube)'s pc, Press CTRL+C to turn off the bot.");
