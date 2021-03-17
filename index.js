@@ -16,12 +16,14 @@ const fs = require('fs');
 
 client.commands = new Discord.Collection();
 
-const commandFiles = fs.readdirSync('./commands/').filter(file => file.endsWith('.js'));
-for (const file of commandFiles){
-	const command = require(`./commands/${file}`);
+//const commandFiles = fs.readdirSync('./commands/').filter(file => file.endsWith('.js'));
+//for (const file of commandFiles){
+//	const command = require(`./commands/${file}`);
+//
+//	client.commands.set(command.name, command);	
+//}
 
-	client.commands.set(command.name, command);	
-}
+const loadCommands = require('./commands/load-cmds')
 
 const { prefix, version, botLogo, embedcolor } = require('./config.json')
 
@@ -29,10 +31,15 @@ const { prefix, version, botLogo, embedcolor } = require('./config.json')
 // bot status
 
 client.once('ready', async (message) => {
+
+    // loading shit
     console.log("Sword's Helper is online")
     console.log("To turn off the bot, Go to the bot's Heroku Dashboard and turn off the `node index.js` switch.")
     console.log("Or if hosted from your (swordcube)'s pc, Press CTRL+C to turn off the bot.");
 
+    loadCommands(client)
+
+    // sending a message in a secret channel saying the bot is online
     const channel = client.channels.cache.find(channel => channel.id === "821599207961788416")
 
     const startupembed = new Discord.MessageEmbed()
@@ -41,8 +48,9 @@ client.once('ready', async (message) => {
     .setDescription(`Sword's Helper has been started successfully.`)
     .setFooter(`v${version} - Created by hexianimates / swordcube`, botLogo)
     .setColor(embedcolor)
-
     channel.send(startupembed)
+
+    // setting the bot's status
 
     client.user.setPresence({ 
 	activity: { 
