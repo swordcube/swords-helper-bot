@@ -80,7 +80,7 @@ client.on('message', async message => {
 	}
 	
 	catch (err) {
-		message.channel.send(":x: That command doesn't exist! Do `sw?help` for a list of commands you can use.\nBut something else could have gone wrong. If there is an error, something else went wrong: " + err)
+		message.channel.send(":x: That command doesn't exist! Do `sw?help` for a list of commands you can use.\nBut something else could have gone wrong. If there is an error, something else went wrong: \n" + "```" + err + "```")
 	}
 
 });

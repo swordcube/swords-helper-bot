@@ -1,14 +1,13 @@
-const Discord = require('discord.js')
-const client = new Discord.Client()
+const Discord = require("discord.js")
 const { prefix, version, botLogo, embedcolor } = require('../config.json');
 
 module.exports = {
-	name: 'help-new',
+	name: "help-new",
 	description: "Brings up this message.",
+
 	execute(client, message, args){
 
 		//start of code
-		try {
 		const msg = args.join(' ')
 
 		const helpembed = new Discord.MessageEmbed()
@@ -38,11 +37,9 @@ Source code on GitHub: https://github.com/swordcube/swords-helper-bot
 			.setColor(embedcolor)
 
 			message.channel.send(helpembed)
-		}
-		catch (err) {
-			message.channel.send(err)
-		};
+		},
+
 		//end of code
 
-	}
-}
+	// }
+};
