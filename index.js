@@ -25,6 +25,14 @@ for (const file of commandFiles){
 
 const { prefix, version, botLogo, embedcolor } = require('./config.json')
 
+const botstatuschannel = client.channels.cache.find(channel => channel.id === "821599207961788416")
+
+global.function catchErr (err, message) {
+	const rebootchannel = client.channels.cache.find(channel => channel.id === "821599207961788416")
+	client.users.get('609047869613277190').send ("There was an error at " + message.channel + " in guild " + message.guild + ", ERROR: ```" + err + "```")
+	botstatuschannel.send("There was an error at " + message.channel + " in guild " + message.guild + ", ERROR: ```" + err + "```");
+}
+
 // bot status
 
 client.once('ready', async (message) => {
@@ -32,7 +40,6 @@ client.once('ready', async (message) => {
     console.log("To turn off the bot, Go to the bot's Heroku Dashboard and turn off the `node index.js` switch.")
     console.log("Or if hosted from your (swordcube)'s pc, Press CTRL+C to turn off the bot.");
 
-    const channel = client.channels.cache.find(channel => channel.id === "821599207961788416")
     const startupembed = new Discord.MessageEmbed()
 
     .setTitle("Bot started")
@@ -40,7 +47,7 @@ client.once('ready', async (message) => {
     .setFooter(`v${version} - Created by hexianimates / swordcube`, botLogo)
     .setColor(embedcolor)
 
-    channel.send(startupembed)
+    botstatuschannel.send(startupembed)
 
     client.user.setPresence({ 
 	activity: { 
@@ -71,6 +78,7 @@ client.on('message', async message => {
 	
 	catch (err) {
 		message.channel.send(":x: That command doesn't exist! Do `sw?help` for a list of commands you can use.")
+		catchErr(err, message);
 	}
 
 });
