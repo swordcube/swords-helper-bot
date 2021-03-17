@@ -25,7 +25,7 @@ for (const file of commandFiles){
 
 const { prefix, version, botLogo, embedcolor } = require('./config.json')
 
-const botstatuschannel = client.channels.cache.find(channel => channel.id === "821599207961788416")
+const botstatuschannel = client.channels.cache.find(botstatuschannel => channel.id === "821599207961788416")
 
 // bot status
 
