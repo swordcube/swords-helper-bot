@@ -12,7 +12,7 @@ Source code for Sword's Helper on Discord
 <li>Discord.js 12.5.1+</li>
 <li>Visual Studio Code/Windows Command Prompt/Linux Terminal</li>
 <li>The latest release of node.js (recommended 12.16.1)</li>
-<li>A bot created from Discord's Developer Portal</li>
+<li>And a bot created from Discord's Developer Portal.</li>
 </ul>
 <h3>Setting up the bot before starting it up</h3>
 <ol>
@@ -21,7 +21,7 @@ Source code for Sword's Helper on Discord
 <li>Open the bot's folder</li>
 <li>Click on terminal on top of the screen</li>
 <li>Click "New Terminal"</li>
-<li>Type in "npm install discord.js" and press enter. After that's done, Type in "npm install pm2". it will install all the important parts for the bot to work.</li>
+<li>Type in "npm install" and press enter. It will install all the important parts for the bot to work.</li>
 <li>Go to the discord developer portal and select a bot</li>
 <li>Go to the bots section and click "Copy Token"</li>
 <li>Go back to Visual Studio Code and go to conf/config.json</li>
@@ -32,23 +32,25 @@ Source code for Sword's Helper on Discord
 <h2><strong>Command Prompt/Linux Terminal Instructions<br /></strong></h2>
 <li>Open the bot's folder</li>
 <li>Right click anywhere and click "Open in Terminal" or cd to the directory in Command Prompt.</li>
-<li>Type in "npm install discord.js" and press enter. After that's done, Type in "npm install pm2". it will install all the important parts for the bot to work.</li>
+<li>Type in "npm install" and press enter. It will install all the important parts for the bot to work.</li>
 <li>Go to the discord developer portal and select a bot</li>
 <li>Go to the bots section and click "Copy Token"</li>
-<li>Go to config.json</li>
-<li>Replace the token (in quotes) with your bots token</li>
+<li>Create a file named ".env" without the quotes</li>
+<li>Then add this line to the file:</li>
+<li>TOKEN=BOT_TOKEN_HERE</li>
+<li>Replace "BOT_TOKEN_HERE" with your bot's token.</li>
 </ol>
 
 <h3>Starting the bot</h3>
 <ol>
 <li>If you haven't opened the terminal or closed it, reopen it and cd back to the directory index.js is in.</li>
-<li>Type in pm2 start index.js --watch</li>
+<li>Type in node .</li>
 <li>Wait a second</li>
 </ol>
 <p>Check Discord and if the bot is online, then you are ready to go!</p>
-<p>If you see an error and the bot shutting down or the bot does nothing, please check the token in conf/config.json. if you put the token in and you still receive an error. please check all the packages or report it to our staff.</p>
+<p>If you see an error and the bot shutting down or the bot does nothing, please check the token in .env. If you put the token in and you still receive an error. please check all the packages or report it to our staff.</p>
 <p>&nbsp;</p>
-<p><strong>Keep the terminal open. To safely shut down the bot, type in "pm2 stop index.js"</strong></p>
+<p><strong>Keep the terminal open. To safely shut down the bot, Press CTRL+C.</strong></p>
 <p>&nbsp;</p>
-<p>And thats how you set it up!<br /></p>
+<p>And that's how you set up Sword's Helper.<br /></p>
 <p>&nbsp;</p>

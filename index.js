@@ -10,9 +10,13 @@ const Discord = require('discord.js')
 
 // Discord.Constants.DefaultOptions.ws.properties.$browser = "Discord Android";
 
-const client = new Discord.Client();
+const client = new Discord.Client()
 
-const fs = require('fs');
+const fs = require('fs')
+
+const config = require('dotenv').config()
+
+const keepAlive = require("./server");
 
 client.commands = new Discord.Collection();
 
@@ -97,4 +101,10 @@ client.on('message', async message => {
 
 // login to discord and w o r k
 
+keepAlive()
 client.login(process.env.TOKEN);
+
+// ^^ create a file called .env and put this in it:
+// TOKEN=BOT_TOKEN_HERE
+
+// Replace "BOT_TOKEN_HERE" with your bot's token.
