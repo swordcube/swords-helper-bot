@@ -24,8 +24,10 @@ Source code for Sword's Helper on Discord
 <li>Type in "npm install" and press enter. It will install all the important parts for the bot to work.</li>
 <li>Go to the discord developer portal and select a bot</li>
 <li>Go to the bots section and click "Copy Token"</li>
-<li>Go back to Visual Studio Code and go to conf/config.json</li>
-<li>Replace the token (in quotes) with your bots token</li>
+<li>Create a file named ".env" without the quotes</li>
+<li>Then add this line to the file:</li>
+<li>TOKEN=BOT_TOKEN_HERE</li>
+<li>Replace "BOT_TOKEN_HERE" with your bot's token.</li>
 </ol>
 
 <ol>
